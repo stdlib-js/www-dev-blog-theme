@@ -10,7 +10,7 @@ A theme for [Ghost][ghost].
 
 ## Copyright
 
-Copyright (c) 2013-2022 Ghost Foundation.
+Copyright (c) 2013-2022 Ghost Foundation and The Stdlib Authors.
 
 <!-- links -->
 
