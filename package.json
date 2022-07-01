@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@stdlib/www-dev-blog-theme",
+  "name": "journal",
   "version": "1.0.0",
   "description": "A Ghost theme for the official stdlib development blog.",
   "license": "MIT",
@@ -29,7 +29,11 @@
   "keywords": [
     "ghost",
     "theme",
-    "ghost-theme"
+    "ghost-theme",
+    "stdlib",
+    "stdlib-js",
+    "stdlib.js",
+    "blog"
   ],
   "bugs": {
     "url": "https://github.com/stdlib-js/www-dev-blog-theme/issues"
