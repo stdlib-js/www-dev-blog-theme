@@ -29,7 +29,6 @@ name: deploy_theme
 on:
   push:
     branches:
-      - master
       - main
 
 # Workflow concurrency group:
