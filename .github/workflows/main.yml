@@ -1,15 +1,79 @@
-name: Deploy Theme
+#/
+# @license MIT
+#
+# Copyright (c) 2022 The Stdlib Authors.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#/
+
+# Workflow name:
+name: deploy_theme
+
+# Workflow triggers:
 on:
   push:
     branches:
       - master
       - main
+
+# Workflow concurrency group:
+concurrency:
+
+  # Specify a group name:
+  group: ${{ github.workflow }}
+
+  # Specify whether to cancel any currently running workflow in the same concurrency group:
+  cancel-in-progress: true
+
+# Workflow jobs:
 jobs:
+
+  # Define a job for deploying the theme...
   deploy:
+
+    # Define a display name:
+    name: 'Deploy theme'
+
+    # Define the type of virtual host machine:
     runs-on: ubuntu-18.04
+
+    # Define a sequence of job steps...
     steps:
-      - uses: actions/checkout@master
-      - uses: TryGhost/action-deploy-theme@v1.5.0
+
+      # Checkout the repository:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v2
+        with:
+          # Specify whether to remove untracked files before checking out the repository:
+          clean: false
+
+          # Limit clone depth to the most recent 100 commits:
+          fetch-depth: 100
+
+          # Specify whether to download Git-LFS files:
+          lfs: false
+        timeout-minutes: 10
+
+      # Deploy theme:
+      - name: 'Deploy'
+        uses: TryGhost/action-deploy-theme@v1.5.0
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+        timeout-minutes: 10
