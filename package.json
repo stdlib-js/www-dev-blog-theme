@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "journal",
+  "name": "stdlib-dev-blog-theme",
   "version": "1.0.0",
   "description": "A Ghost theme for the official stdlib development blog.",
   "license": "MIT",
