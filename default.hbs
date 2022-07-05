@@ -1,59 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>{{meta_title}}</title>
+
+	<link rel="stylesheet" href="{{asset "css/fonts.css"}}">
 	<link rel="stylesheet" href="{{asset "built/screen.css"}}">
-
-	{{ghost_head}}
-
 	<style>
-		/* inter-regular */
-		@font-face {
-			font-family: "Inter";
-			font-style: normal;
-			font-weight: 400;
-			src: local(""), url("{{asset "fonts/inter/static/inter-regular.woff2"}}");
-		}
-
-		/* inter-medium */
-		@font-face {
-			font-family: "Inter";
-			font-style: normal;
-			font-weight: 500;
-			src: local(""), url("{{asset "fonts/inter/static/inter-medium.woff2"}}");
-		}
-
-		/* inter-semibold */
-		@font-face {
-			font-family: "Inter";
-			font-style: normal;
-			font-weight: 600;
-			src: local(""), url("{{asset "fonts/inter/static/inter-semibold.woff2"}}");
-		}
-
-		/* inter-bold */
-		@font-face {
-			font-family: "Inter";
-			font-style: normal;
-			font-weight: 700;
-			src: local(""), url("{{asset "fonts/inter/static/inter-bold.woff2"}}");
-		}
-
-		/* inter-extrabold */
-		@font-face {
-			font-family: "Inter";
-			font-style: normal;
-			font-weight: 800;
-			src: local(""), url("{{asset "fonts/inter/static/inter-extrabold.woff2"}}");
-		}
-
 		.gh-head .gh-head-brand .gh-head-logo {
 			font-weight: 500;
 		}
 	</style>
+
+	{{ghost_head}}
 </head>
 
 <body class="{{body_class}} is-head-b--a_n{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">
