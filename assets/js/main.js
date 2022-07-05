@@ -25,5 +25,5 @@
 'use strict';
 
 (function main() { // eslint-disable-line no-restricted-syntax
-	pagination(false); // eslint-disable-line no-undef
+	pagination( false ); // eslint-disable-line no-undef
 })();
