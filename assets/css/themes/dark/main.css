@@ -1,0 +1,293 @@
+/*
+* Stylesheet defining "dark" theme colors.
+*/
+
+html[data-theme="dark"] {
+	/*
+	* The default theme background should be charcoal.
+	*/
+	--theme-background-color: #222426;
+
+	/*
+	* The default text color should be very light grey.
+	*/
+	--theme-text-color: #f5f7f7;
+
+	/*
+	* stdlib colors.
+	*/
+	--stdlib-orange: #f0ad3e;
+	--stdlib-blue: #00aeef;
+
+	/*
+	* Links should be blue.
+	*/
+	--link-color: #00abe7;
+
+	/*
+	* Skip links should be blue.
+	*/
+	--skip-link-color: #00aeef;
+
+	/*
+	* Skip links should have a charcoal background color.
+	*/
+	--skip-link-background-color: #1d1f20;
+
+	/*
+	* Blockquote text should be light grey.
+	*/
+	--blockquote-color: #f3f3f3;
+
+	/*
+	* Blockquote border color should be grey.
+	*/
+	--blockquote-border-color: #dddddd;
+
+	/*
+	* The top-navigation should have a background which is slightly lighter than the theme background in order to convey depth.
+	*/
+	--top-nav-background-color: #25282a;
+
+	/*
+	* Top-navigation links should be white.
+	*/
+	--top-nav-link-color: #ffffff;
+
+	/*
+	* When hovering over top-navigation links, the links should have a grey background color.
+	*/
+	--top-nav-link-hover-background-color: rgba(0, 0, 0, 0.2);
+
+	/*
+	* Top-navigation icons should be white.
+	*/
+	--top-nav-icon-color: #f5f7f7;
+
+	/*
+	* To distinguish the search input from the top-navigation, set the background color to a bluish grey.
+	*/
+	--top-nav-search-background-color: #373a49;
+	--top-nav-shadow-color: #1a1a1a;
+
+	/*
+	* The divider dividing search from the package menu should be light grey.
+	*/
+	--top-nav-divider-color: #e9e9e9;
+
+	/*
+	* Horizontal rules should be medium-light grey.
+	*/
+	--hr-background-color: #cdcdcd;
+
+	/*
+	* The bottom borders of headings should be medium-light grey.
+	*/
+	--heading-border-bottom-color: #b5b5b5;
+
+	/*
+	* Positive sentiment icons should be orange (slightly lighter than stdlib orange in order to satisfy WebAIM contrast requirements).
+	*/
+	--feedback-positive-sentiment-icon-color: #ff9514;
+
+	/*
+	* When hovering over a positive sentiment icon, a positive sentiment icons should be (a slightly darker) orange.
+	*/
+	--feedback-positive-sentiment-icon-hover-color: #f0ad3e;
+
+	/*
+	* Positive sentiment icons which are selected should be orange.
+	*/
+	--feedback-positive-sentiment-icon-selected-color: #ff9514;
+
+	/*
+	* Positive sentiment icons which are not selected should be a very light grey.
+	*/
+	--feedback-positive-sentiment-icon-not-selected-color: #f5f7f7;
+
+	/*
+	* Negative sentiment icons should be light blue (slightly lighter than stdlib blue in order to satisfy WebAIM contrast requirements).
+	*/
+	--feedback-negative-sentiment-icon-color: #00bbff;
+
+	/*
+	* When hovering over a negative sentiment icon, a negative sentiment icons should be (a slightly darker) blue.
+	*/
+	--feedback-negative-sentiment-icon-hover-color: #00aeef;
+
+	/*
+	* Negative sentiment icons which are selected should be light blue.
+	*/
+	--feedback-negative-sentiment-icon-selected-color: #00bbff;
+
+	/*
+	* Negative sentiment icons which are not selected should be a very light grey.
+	*/
+	--feedback-negative-sentiment-icon-not-selected-color: #f5f7f7;
+
+	/*
+	* Positive sentiment icons should be transparent.
+	*/
+	--feedback-positive-sentiment-background-color: transparent;
+
+	/*
+	* Positive sentiment icons should have a dark charcoal background on hover.
+	*/
+	--feedback-positive-sentiment-hover-background-color: #17191a;
+
+	/*
+	* Positive sentiment icons which are selected should have a dark charcoal background.
+	*/
+	--feedback-positive-sentiment-selected-background-color: #17191a;
+
+	/*
+	* Positive sentiment icons which are not selected should be transparent.
+	*/
+	--feedback-positive-sentiment-not-selected-background-color: transparent;
+
+	/*
+	* Negative sentiment icons should be transparent.
+	*/
+	--feedback-negative-sentiment-background-color: transparent;
+
+	/*
+	* Negative sentiment icons should have a charcoal background on hover.
+	*/
+	--feedback-negative-sentiment-hover-background-color: #17191a;
+
+	/*
+	* Negative sentiment icons which are selected should have a charcoal background.
+	*/
+	--feedback-negative-sentiment-selected-background-color: #17191a;
+
+	/*
+	* Negative sentiment icons which are not selected should be transparent.
+	*/
+	--feedback-negative-sentiment-not-selected-background-color: transparent;
+
+	/*
+	* The borders of feedback sentiment buttons should be medium-light grey (and should match the color of horizontal rules).
+	*/
+	--feedback-sentiment-border-color: #cdcdcd;
+
+	/*
+	* When hovering over a feedback sentiment button, the border of a feedback sentiment button should be medium grey.
+	*/
+	--feedback-sentiment-hover-border-color: #858585;
+
+	/*
+	* Feedback error messages should be salmon.
+	*/
+	--feedback-error-text-color: #ffa07a;
+
+	/*
+	* When hovering over a search result, the search result should have a bluish border.
+	*/
+	--search-result-hover-border-color: #4078c0;
+
+	/*
+	* The settings menu overlay should have a light blue background.
+	*/
+	--settings-overlay-background-color: rgba(182,183,213,0.5);
+
+	/*
+	* Settings menu input elements should have a light grey background.
+	*/
+	--settings-input-background-color: #eaeaea;
+
+	/*
+	* When hovering over an input element, a settings menu input element should have a white background.
+	*/
+	--settings-input-hover-background-color: #ffffff;
+
+	/*
+	* Settings menu input elements should have a light grey border.
+	*/
+	--settings-input-border-color: #eaeaea;
+
+	/*
+	* When hovering over an input element, a settings menu input element should have a grey border.
+	*/
+	--settings-input-hover-border-color: #cccccc;
+
+	/*
+	* Settings menu input elements should have grey text.
+	*/
+	--settings-input-text-color: #4a5568;
+
+	/*
+	* The default button background color should be blue.
+	*/
+	--default-button-background-color: #1976d2;
+
+	/*
+	* When hovering over a button, the default button background color should be a slightly lighter (more vibrant) blue.
+	*/
+	--default-button-hover-background-color: #0080ff;
+
+	/*
+	* The default button text color should be white.
+	*/
+	--default-button-text-color: #ffffff;
+
+	/*
+	* Table cells and rows should have a darker grey border.
+	*/
+	--table-cell-border-color: #616161;
+	--table-row-border-color: #b5b5b5;
+
+	/*
+	* Syntax highlighting.
+	*/
+
+	/*
+	* Code blocks should have a medium grey background.
+	*/
+	--pre-background-color: #373a49;
+	--code-background-color: rgba(255, 255, 255, 0.04);
+
+	/*
+	* The default text color for code should be vanilla.
+	*/
+	--code-color: #f8f8f2;            /* vanilla */
+
+	/*
+	* Code comments should be tan.
+	*/
+	--code-comment-color: #d4d0ab;    /* tan */
+
+	/*
+	* Variables should be salmon.
+	*/
+	--code-var-color: #ffa07a;        /* salmon */
+
+	/*
+	* Built-ins should be orange.
+	*/
+	--code-builtin-color: #f5ab35;    /* orange */
+
+	/*
+	* Attributes should be yellow.
+	*/
+	--code-attribute-color: #ffd700;  /* yellow */
+
+	/*
+	* Strings should be green.
+	*/
+	--code-string-color: #abe338;     /* green */
+
+	/*
+	* Titles should be cyan.
+	*/
+	--code-title-color: #00e0e0;      /* cyan */
+
+	/*
+	* Keywords should be purple.
+	*/
+	--code-keyword-color: #dcc6e0;    /* purple */
+
+	/*
+	* Decoded error messages should be salmon.
+	*/
+	--code-decoded-error: #ffa07a;    /* salmon */
+}
