@@ -3,28 +3,33 @@
 	font-style: normal;
 	font-weight: 400;
 	src: local(""), url("/assets/fonts/inter/static/inter-regular.woff2");
+	font-display: swap;
 }
 @font-face {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 500;
 	src: local(""), url("/assets/fonts/inter/static/inter-medium.woff2");
+	font-display: swap;
 }
 @font-face {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 600;
 	src: local(""), url("/assets/fonts/inter/static/inter-semibold.woff2");
+	font-display: swap;
 }
 @font-face {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
 	src: local(""), url("/assets/fonts/inter/static/inter-bold.woff2");
+	font-display: swap;
 }
 @font-face {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 800;
 	src: local(""), url("/assets/fonts/inter/static/inter-extrabold.woff2");
+	font-display: swap;
 }
