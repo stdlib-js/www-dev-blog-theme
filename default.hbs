@@ -47,6 +47,20 @@
 		.gh-head .gh-head-brand .gh-head-logo {
 			font-weight: 500;
 		}
+
+		.gh-foot-menu .nav li + li::before {
+			content: "/";
+		}
+
+		@media (max-width: 767px) {
+			.gh-foot-menu .nav {
+				flex-direction: row;
+			}
+
+			.gh-foot-menu .nav li + li::before {
+				display: block;
+			}
+		}
 	</style>
 
 	{{ghost_head}}
@@ -64,7 +78,7 @@
 							{{@site.title}}
 						{{/if}}
 					</a>
-					<button class="gh-burger"></button>
+					<button class="gh-burger" aria-label="Top navigation"></button>
 				</div>
 
 				<nav class="gh-head-menu">
