@@ -16,20 +16,29 @@
 # limitations under the License.
 #/
 
-# DEPENDENCIES #
-
-include $(TOOLS_MAKE_LIB_DIR)/install/ghost.mk
-include $(TOOLS_MAKE_LIB_DIR)/install/node.mk
-
-
 # RULES #
 
 #/
-# Runs the project's install process.
+# Installs a local Ghost instance.
 #
 # @example
-# make install
+# make install-ghost
 #/
-install: install-node install-ghost
+install-ghost:
+	$(QUIET) $(MKDIR_RECURSIVE) $(GHOST_DIR)
+	$(QUIET) $(GHOST) install local --port 2368 --pname ghost-stdlib --dir $(GHOST_DIR)
 
-.PHONY: install
+.PHONY: install-ghost
+
+#/
+# Cleans the Ghost installation directory.
+#
+# @example
+# make clean-ghost
+#/
+clean-ghost:
+	$(QUIET) $(GHOST) stop ghost-stdlib
+	$(QUIET) $(GHOST) uninstall --dir $(GHOST_DIR) --force
+	$(QUIET) $(DELETE) $(DELETE_FLAGS) $(GHOST_DIR)
+
+.PHONY: clean-ghost

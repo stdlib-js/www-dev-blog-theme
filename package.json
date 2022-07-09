@@ -15,11 +15,11 @@
     }
   ],
   "scripts": {
-    "dev:install": "mkdir -p ./ghost && cd ./ghost && ghost install local --port 2368 --pname ghost-stdlib && cd ..",
-    "dev:deploy": "rm -rf ./ghost/content/themes/stdlib-dev-blog-theme && mkdir -p ./ghost/content/themes/stdlib-dev-blog-theme && cp -R ./theme/ ./ghost/content/themes/stdlib-dev-blog-theme/",
-    "dev:restart": "ghost stop ghost-stdlib && cd ./ghost && ghost start && cd ..",
-    "dev:open": "open http://localhost:2368/ghost/",
-    "dev:clean": "ghost stop ghost-stdlib && ghost uninstall --dir ./ghost --force"
+    "dev:install": "make install-ghost",
+    "dev:deploy": "make dev-deploy",
+    "dev:restart": "make dev-restart",
+    "dev:open": "make dev-open",
+    "dev:clean": "make clean-ghost"
   },
   "main": "",
   "repository": {

@@ -125,3 +125,6 @@ NODE ?= node
 
 # Define the command for `npm`:
 NPM ?= npm
+
+# Define the command for `ghost`:
+GHOST ?= ghost
