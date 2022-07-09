@@ -1,25 +1,26 @@
 {
   "private": true,
   "name": "stdlib-dev-blog-theme",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A Ghost theme for the official stdlib development blog.",
   "license": "Apache-2.0",
   "author": {
-    "name": "Ghost Foundation",
-    "email": "hello@ghost.org",
-    "url": "https://ghost.org"
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/www-dev-blog-theme/graphs/contributors"
   },
   "contributors": [
-    {
-      "name": "Ghost Foundation",
-      "url": "https://ghost.org"
-    },
     {
       "name": "The Stdlib Authors",
       "url": "https://github.com/stdlib-js/www-dev-blog-theme/graphs/contributors"
     }
   ],
-  "scripts": {},
+  "scripts": {
+    "dev:install": "mkdir -p ./ghost && cd ./ghost && ghost install local --port 2368 --pname ghost-stdlib && cd ..",
+    "dev:deploy": "rm -rf ./ghost/content/themes/stdlib-dev-blog-theme && mkdir -p ./ghost/content/themes/stdlib-dev-blog-theme && cp -R ./theme/ ./ghost/content/themes/stdlib-dev-blog-theme/",
+    "dev:restart": "ghost stop ghost-stdlib && cd ./ghost && ghost start && cd ..",
+    "dev:open": "open http://localhost:2368/ghost/",
+    "dev:clean": "ghost stop ghost-stdlib && ghost uninstall --dir ./ghost --force"
+  },
   "main": "",
   "repository": {
     "type": "git",
@@ -27,9 +28,9 @@
   },
   "homepage": "https://github.com/stdlib-js/www-dev-blog-theme",
   "keywords": [
+    "ghost-theme",
     "ghost",
     "theme",
-    "ghost-theme",
     "stdlib",
     "stdlib-js",
     "stdlib.js",
@@ -40,49 +41,5 @@
   },
   "dependencies": {},
   "devDependencies": {},
-  "engines": {
-    "ghost": ">=4.0.0"
-  },
-  "config": {
-    "posts_per_page": 10,
-    "image_sizes": {
-        "xs": {
-        "width": 150
-      },
-      "s": {
-        "width": 300
-      },
-      "m": {
-        "width": 720
-      },
-      "l": {
-        "width": 960
-      },
-      "xl": {
-        "width": 1200
-      },
-      "xxl": {
-       "width": 2000
-      }
-    },
-    "card_assets": true,
-    "custom": {
-      "title_font": {
-        "type": "select",
-        "options": [
-          "Modern sans-serif",
-          "Elegant serif"
-        ],
-        "default": "Modern sans-serif"
-      },
-      "body_font": {
-        "type": "select",
-        "options": [
-          "Modern sans-serif",
-          "Elegant serif"
-        ],
-        "default": "Modern sans-serif"
-      }
-    }
-  }
+  "engines": {}
 }
