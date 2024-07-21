@@ -27,7 +27,24 @@ limitations under the License.
 		<header class="gh-article-header gh-canvas">
 			{{#is "post"}}
 				<span class="gh-article-meta">
-					{{#primary_author}}By <a href="{{url}}">{{name}}</a>{{/primary_author}}
+					By&nbsp;
+					{{#has author="count:>1"}}
+						{{!-- Multiple authors --}}
+						{{#foreach authors}}
+							{{#if @first}}
+								<a href="{{url}}">{{name}}</a>
+							{{else if @last}}
+								and <a href="{{url}}">{{name}}</a>
+							{{else}}
+								, <a href="{{url}}">{{name}}</a>
+							{{/if}}
+						{{/foreach}}
+					{{else}}
+						{{!-- Single author --}}
+						{{#primary_author}}
+							By <a href="{{url}}">{{name}}</a>
+						{{/primary_author}}
+					{{/has}}
 					{{#if primary_tag}}
 						in
 						<a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
