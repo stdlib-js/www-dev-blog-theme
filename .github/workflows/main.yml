@@ -44,7 +44,7 @@ jobs:
     name: 'Deploy theme'
 
     # Define the type of virtual host machine:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     # Define a sequence of job steps...
     steps:
