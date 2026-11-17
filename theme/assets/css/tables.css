@@ -1,0 +1,130 @@
+/**
+* @license Apache-2.0
+*
+* Copyright (c) 2026 The Stdlib Authors.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*    http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+/*
+* Styles for tables in post content.
+*
+* ## Notes
+*
+* -   Without these rules, tables in post content get browser defaults: no borders or row separation, headers centered over left-aligned cells, and short cells vertically centered beside wrapped ones.
+* -   Colors come from tokens the theme already defines in `themes/light/main.css` (`--theme-text-color`, `--table-cell-border-color`, and `--pre-background-color`), the same ones the stdlib docs use for README tables.
+* -   Every selector is scoped to `.gh-content`, so only tables in post and page bodies are affected.
+* -   Tables inside an embedded GitHub gist are excluded (`:not(.gist table)`), as in Ghost's own Casper theme, because a gist renders its code as a table with one row per line.
+*/
+
+/*
+* Rules only, no grid: a dark rule above and below the table.
+*
+* ## Notes
+*
+* -   Text is 15px, the size the theme uses for footnotes, so a table reads as supporting the prose rather than competing with it.
+*/
+.gh-content table:not(.gist table) {
+	border-collapse: collapse;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	width: 100%;
+
+	/* width | style | color */
+	border-top: 1px solid var(--theme-text-color);
+	border-bottom: 1px solid var(--theme-text-color);
+}
+
+/*
+* Cells.
+*
+* ## Notes
+*
+* -   `text-align: start` aligns header cells with their columns. An explicit alignment from a Markdown separator row (e.g., `:---:`) still wins, because the renderer writes it as an inline style.
+* -   `vertical-align: top` keeps short cells level with the first line of wrapped neighbors.
+* -   The first and last columns get a small inset, so text sits inside a shaded row rather than flush against its edge. The rules and shading still line up with the edges of the prose.
+*/
+.gh-content table:not(.gist table) th,
+.gh-content table:not(.gist table) td {
+	padding: 0.5em 1em 0.5em 0;
+	text-align: start;
+	vertical-align: top;
+}
+
+.gh-content table:not(.gist table) th:first-child,
+.gh-content table:not(.gist table) td:first-child {
+	padding-left: 0.5em;
+}
+
+.gh-content table:not(.gist table) th:last-child,
+.gh-content table:not(.gist table) td:last-child {
+	padding-right: 0.5em;
+}
+
+/*
+* Column headers.
+*/
+.gh-content table:not(.gist table) thead th {
+	font-weight: 600;
+
+	/* width | style | color */
+	border-bottom: 1px solid var(--theme-text-color);
+}
+
+/*
+* Body rows: a faint rule between rows, and alternate rows shaded to help the eye follow a row across.
+*/
+.gh-content table:not(.gist table) tbody tr + tr {
+	/* width | style | color */
+	border-top: 1px solid var(--table-cell-border-color);
+}
+
+.gh-content table:not(.gist table) tbody tr:nth-child(2n) {
+	background-color: var(--pre-background-color);
+}
+
+/*
+* Row headers (e.g., `<th scope="row">`) are lighter than column headers, so a table reads across from each row's label.
+*/
+.gh-content table:not(.gist table) tbody th {
+	font-weight: 500;
+}
+
+/*
+* Narrow screens.
+*
+* ## Notes
+*
+* -   Tables stay `display: table`. Scrolling the table itself would need `display: block`, which can cost a table its role in some screen readers, and a table in a Markdown card has no wrapper element to scroll instead.
+* -   Long unbroken code (e.g., package paths like `@stdlib/stats/base/dists/normal/pdf`) is the usual reason a prose table cannot shrink to the column. Letting inline code break anywhere lowers each cell's minimum width, so the table can fit. Ordinary words are left alone.
+*/
+.gh-content table:not(.gist table) td code,
+.gh-content table:not(.gist table) th code {
+	overflow-wrap: anywhere;
+}
+
+/*
+* Captions match figure captions (see `built/screen.css` and `captions.css`), so a table and a figure read as the same kind of object.
+*
+* ## Notes
+*
+* -   `caption-side: bottom` places the caption below the table, as figure captions are. A screen reader announces it with the table wherever it sits.
+*/
+.gh-content table:not(.gist table) caption {
+	caption-side: bottom;
+	color: var(--color-secondary-text);
+	font-size: 1.4rem;
+	line-height: 1.4;
+	margin-top: 1.6rem;
+	text-align: start;
+}
